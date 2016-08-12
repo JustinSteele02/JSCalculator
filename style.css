@@ -4,6 +4,7 @@ html, body {
   width: 100%;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 *, *:before, *:after {
@@ -11,25 +12,63 @@ html, body {
 }
 
 #wrapper {
-  height: 600px;
-  width: 540px;
+  height: 100%;
+  width: 100%;
+  max-height: 600px;
+  max-width: 540px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: aqua;
+  background-color: #efefef;
+  box-shadow: 0 0 15px black;
 }
 
 #wrapper * {
   position: relative;
+  font-size: 34px;
+  font-family: sans-serif;
+}
+
+.spacer {
+  height: 5%;
+}
+
+#display-wrapper {
+  height: 17%;
+  background-color: #3c89c3;
 }
 
 #display {
-  height: 12%;
+  height: 40%;
   width: 92%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   margin: 0 auto;
-  border: 1px solid black;
+  background-color: #efefef;
   text-align: right;
+}
+
+#current-operation {
+  height: 100%;
+  width: 30%;
+  float: left;
+  text-align: left;
+}
+
+#current-op-text {
+  float: left;
+  margin-left: 4%;
+  font-size: 18px;
+}
+
+#current-op-symbol {
+  float: left;
+  margin-left: 4%;
+  font-size: 18px;
+  background-color: yellow;
 }
 
 .btn-col {
@@ -48,16 +87,34 @@ html, body {
   width: 100%;
   height: 16%;
   margin: 0;
-  border: 1px solid black;
+  background-color: #d3d3d3;
   text-align: center;
+  
 }
 
-.spacer {
-  height: 5%;
+.btn:hover {
+  box-shadow: 0 0 8px black;
+}
+
+.operator {
+  background-color: #be4848;
+  color: white;
+}
+
+.clear {
+  background-color: #ddcd50;
+  color: white;
+}
+
+#back {
+  background-color: #ba4cba;
+  color: white;
 }
 
 #equals {
-  height: 79%;
+  height: 37%;
+  background-color: #159b49;
+  color: white;
 }
 
 .text {
@@ -65,6 +122,12 @@ html, body {
   top: 50%;
   transform: translateY(-50%);
   margin: 0;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .btn-text {
@@ -74,19 +137,4 @@ html, body {
 #display-text {
   margin-right: 2%;
   /*Font*/
-}
-
-@media only screen and (max-width: 600px) {
-  body {
-    overflow: hidden;
-  }
-  
-  #wrapper {
-    width: 100%;
-    height: 100%;
-    max-height: 540px;
-    top: 0;
-    left: 0;
-    transform: translate(0, 0);
-  }
 }
