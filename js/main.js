@@ -42,6 +42,7 @@ $('#back').click(function() {
 });
 
 $('.operator').click(function() {
+  hitEquals = false;
   if (num1 === 0) {
     num1 = parseFloat($('#display-text').text());
     $('#current-op-text').text($('#display-text').text());
